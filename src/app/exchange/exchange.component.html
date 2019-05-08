@@ -1,0 +1,27 @@
+<h1>Exchange Rate</h1>
+<p>Currency</p>
+<div class="form-group">
+  <input [(ngModel)]="convertedAmount" type="text" class="form-control">
+  <!-- <select>
+  <option *ngFor="let currency of currencies" [value]="currency.cuerrency">
+    {{currency.currency}}
+  </option>
+</select> -->
+  <select [(ngModel)]="fromCurrency" class="custom-select">
+    <option *ngFor="let currency of currencies" [value]="currency">
+      {{currency}}
+    </option>
+  </select>
+</div>
+<div class="form-group">
+  <span> = {{ calculate(convertedAmount, fromCurrency, toCurrency) | number: '1.2-2'}}
+  </span>
+  <select [(ngModel)]="toCurrency" class="custom-select">
+    <option *ngFor="let currency of currencies" [value]="currency">
+      {{currency}}
+    </option>
+  </select>
+</div>
+<!-- <p>{{fromCurrency}}</p>
+<p>{{toCurrency}}</p>
+<p>{{getRate(toCurrency)}}</p> -->
