@@ -1,0 +1,12 @@
+<div class="form-group">
+  <select [(ngModel)]="duration['name']" class="custom-select">
+    <option *ngFor="let duration of durations" [value]="duration['name']">
+      {{duration['name']}}
+    </option>
+  </select>
+</div>
+<div id="line-charts" class="row">
+  <div id="chart1" class="col-12 col-md-6"><canvas id="line-chart1"></canvas>
+  </div>
+  <div id="chart2" class="col-12 col-md-6"><canvas id="line-chart2"></canvas></div>
+</div>

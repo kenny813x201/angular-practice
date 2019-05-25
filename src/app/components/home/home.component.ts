@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { createOfflineCompileUrlResolver } from '@angular/compiler';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/service/data.service';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    // this.data.getUsers().subscribe(data => {
-    //   this.users = data;
-    // })
+
   }
+
+
 
 
 }

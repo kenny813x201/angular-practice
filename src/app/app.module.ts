@@ -6,14 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { ExchangeComponent } from './exchange/exchange.component';
-import { ChartComponent } from './exchange/chart/chart.component';
+import { NavComponent } from './components/nav/nav.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { ExchangeComponent } from './components/exchange/exchange.component';
+import { ChartComponent } from './components/exchange/chart/chart.component';
+import { TopoComponent } from './components/topo/topo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ChartComponent } from './exchange/chart/chart.component';
     ContactComponent,
     HomeComponent,
     ExchangeComponent,
-    ChartComponent
+    ChartComponent,
+    TopoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { ChartComponent } from './exchange/chart/chart.component';
     MatInputModule,
     MatSelectModule,
     FormsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

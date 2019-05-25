@@ -2,11 +2,6 @@
 <p>Currency</p>
 <div class="form-group">
   <input [(ngModel)]="convertedAmount" type="text" class="form-control">
-  <!-- <select>
-  <option *ngFor="let currency of currencies" [value]="currency.cuerrency">
-    {{currency.currency}}
-  </option>
-</select> -->
   <select [(ngModel)]="fromCurrency" class="custom-select">
     <option *ngFor="let currency of currencies" [value]="currency">
       {{currency}}
@@ -22,6 +17,4 @@
     </option>
   </select>
 </div>
-<!-- <p>{{fromCurrency}}</p>
-<p>{{toCurrency}}</p>
-<p>{{getRate(toCurrency)}}</p> -->
+<app-chart [from]="fromCurrency" [to]="toCurrency"></app-chart>

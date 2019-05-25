@@ -18,7 +18,7 @@ export class DataService {
   }
 
   getHistoryRatesBetween(from: string, to: string, country1: string, country2: string) {
-    return this.http.get(`https://api.exchangeratesapi.io/history?start_at=${from}&end_at=${to}&symbols=${country1},${country2}`)
+    return this.http.get(`https://api.exchangeratesapi.io/history?start_at=${from}&end_at=${to}&symbols=${country1},${country2}&base=USD`)
   }
 
 }

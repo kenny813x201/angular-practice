@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from 'src/app/service/data.service';
 import { StringifyOptions } from 'querystring';
 import { Subscriber } from 'rxjs';
 
@@ -13,6 +13,7 @@ export interface Currency {
   templateUrl: './exchange.component.html',
   styleUrls: ['./exchange.component.scss']
 })
+
 export class ExchangeComponent implements OnInit {
 
   apiData: Object = { 'rates': '' };
@@ -34,10 +35,6 @@ export class ExchangeComponent implements OnInit {
         this.rates.push({ currency: key, rate: Number(value) });
       }
     })
-    this.data.getHistoryRatesBetween('2018-01-01', '2018-02-01', "AUD", "USD")
-      .subscribe(data => {
-        console.log(data);
-      })
   }
 
   getRate(currency): number {
@@ -47,4 +44,5 @@ export class ExchangeComponent implements OnInit {
   calculate(convertedAmount: number, fromCurrency: string, toCurrency: string): number {
     return convertedAmount / this.getRate(fromCurrency) * this.getRate(toCurrency)
   }
+
 }
