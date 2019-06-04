@@ -1,7 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import * as $ from 'jquery';
+
+import * as _ from 'lodash';
+import * as backbone from 'backbone';
 import * as joint from 'jointjs';
-declare const _;
 
 
 
@@ -703,7 +706,6 @@ export class TopoComponent implements OnInit {
     this.draw();
     this.hover();
     this.buttonClicked();
-    this.createTestNode()
   }
 
   prepareData(tempDw, dataWarehouse, type, originalKey) {
@@ -811,9 +813,6 @@ export class TopoComponent implements OnInit {
 
     });
     this.paper.scaleContentToFit();
-  }
-
-  createTestNode() {
   }
 
   createNode(type, name) {
